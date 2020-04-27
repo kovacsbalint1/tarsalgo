@@ -8,7 +8,25 @@ export default class Megoldas {
         return this._szemelyek[0].Id;
     }
     public _UtolsoEmberAkiBelepett(): number {
-        return this._szemelyek[this._szemelyek.length].Id;
+        return this._szemelyek[this._szemelyek.length - 1].Id;
+    }
+    private _letszam = 0;
+    private _maxLetszam = 0;
+    public _mikorPerc = 0;
+    public _mikorOra = 0;
+    public _LegtobbenEgyszerreMikor(): void {
+        for (let i = 0; i <= this._szemelyek.length - 1; i++) {
+            if (this._szemelyek[i].Irány == "be") {
+                this._letszam++;
+            } else {
+                this._letszam--;
+            }
+            if (this._letszam > this._maxLetszam) {
+                this._maxLetszam = this._letszam;
+                this._mikorOra = this._szemelyek[i].Óra;
+                this._mikorPerc = this._szemelyek[i].Perc;
+            }
+        }
     }
     constructor(file: string) {
         fs.readFileSync(file)

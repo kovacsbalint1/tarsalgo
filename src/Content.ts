@@ -37,7 +37,8 @@ export default class Content {
 
         // Kezd a kódolást innen -->
         const megoldas = new Megoldas("ajto.txt");
-        res.write(`2. feladat: Az első belépő: ${megoldas._ElsoEmberAkiBelepett()}\nAz utolsó belépő: ${megoldas._UtolsoEmberAkiBelepett()}\n`);
+        res.write(`2. feladat:\nAz első belépő: ${megoldas._ElsoEmberAkiBelepett()}\nAz utolsó belépő: ${megoldas._UtolsoEmberAkiBelepett()}\n`);
+        res.write(`5. feladat: ${megoldas._mikorOra}:${megoldas._mikorPerc}`);
         // <---- Fejezd be a kódolást
 
         res.write("</pre></form>");
