@@ -1,6 +1,5 @@
 import fs from "fs";
 import Szemely from "./Szemely";
-import { strict } from "assert";
 
 export default class Megoldas {
     private _szemelyek: Szemely[] = [];
